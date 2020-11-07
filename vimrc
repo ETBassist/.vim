@@ -1,6 +1,8 @@
 "" What can I say, I like the colors
 autocmd vimenter * ++nested colorscheme gruvbox
 set background=dark
+"" Adds fzf fuzzy finding
+set rtp+=/usr/local/opt/fzf
 syntax on
 execute pathogen#infect()
 filetype plugin indent on
@@ -29,7 +31,7 @@ set laststatus=2
 set noshowmode
 
 let g:lightline = {
-      \ 'colorscheme': 'powerline',
+      \ 'colorscheme': 'deus',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'filename', 'gitbranch', 'modified' ] ],
@@ -83,6 +85,7 @@ nnoremap <leader>noh :noh<CR>
 nnoremap <leader>rn :set rnu!<CR>
 nnoremap <leader>sp :set spell!<CR>
 
+nnoremap <leader>fzf :FZF<CR>
 nnoremap <leader>ff :grep -r
 nnoremap <leader>gs :G<CR>
 nnoremap <leader>w :w<CR>
