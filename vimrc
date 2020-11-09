@@ -86,6 +86,6 @@ nnoremap <leader>rn :set rnu!<CR>
 nnoremap <leader>sp :set spell!<CR>
 
 nnoremap <leader>fzf :FZF<CR>
-nnoremap <leader>ff :grep -r
+nnoremap <leader>ff :Rg<CR>
 nnoremap <leader>gs :G<CR>
 nnoremap <leader>w :w<CR>
