@@ -19,7 +19,6 @@ hi CursorLine cterm=BOLD ctermbg=16 ctermfg=NONE
 "" Shows numbers and numbers relative to cursor
 set number
 set rnu
-set tabstop=2 softtabstop=2 shiftwidth=2
 set expandtab
 set sr
 set nowrap
