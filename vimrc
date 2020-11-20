@@ -29,6 +29,13 @@ set t_Co=256
 set laststatus=2
 set noshowmode
 
+"" Try to use system clipboard as main register
+set clipboard=unnamed
+
+"" Vmath plugin
+vmap <expr>  ++  VMATH_YankAndAnalyse()
+nmap         ++  vip++
+
 let g:lightline = {
       \ 'colorscheme': 'deus',
       \ 'active': {
