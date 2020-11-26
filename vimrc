@@ -1,10 +1,11 @@
-"" What can I say, I like the colors
-autocmd vimenter * ++nested colorscheme gruvbox
-set background=dark
 "" Adds fzf fuzzy finding
 set rtp+=/usr/local/opt/fzf
-syntax on
 execute pathogen#infect()
+
+syntax enable
+"" What can I say, I like the colors
+colorscheme gruvbox
+set background=dark
 filetype plugin indent on
 autocmd VimEnter * echo ">^.^<"
 "" Don't try to be compatible with Vi
@@ -62,7 +63,8 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 "" netrw tree style
-let g:netrw_liststyle=3
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
 
 "" searching
 set hlsearch
