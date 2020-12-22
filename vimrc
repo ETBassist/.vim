@@ -4,8 +4,9 @@ execute pathogen#infect()
 
 syntax enable
 "" What can I say, I like the colors
-colorscheme gruvbox
-set background=dark
+let g:onedark_termcolors=16
+colorscheme onedark
+
 filetype plugin indent on
 autocmd VimEnter * echo ">^.^<"
 "" Don't try to be compatible with Vi
@@ -25,10 +26,13 @@ set sr
 set nowrap
 set autoindent
 set smartindent
-set t_Co=256
 "" Shows light line and hides original mode indicator
 set laststatus=2
 set noshowmode
+
+"" Persistent undo
+set undofile
+set undodir=~/.vim/undodir
 
 "" Try to use system clipboard as main register
 set clipboard=unnamed
@@ -38,7 +42,7 @@ vmap <expr>  ++  VMATH_YankAndAnalyse()
 nmap         ++  vip++
 
 let g:lightline = {
-      \ 'colorscheme': 'deus',
+      \ 'colorscheme': 'powerlineish',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'filename', 'gitbranch', 'modified' ] ],
@@ -50,7 +54,7 @@ let g:lightline = {
 
 "" Show 80 character line
 set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+highlight ColorColumn ctermbg=16 guibg=lightgrey
 
 "" Syntastic configuration
 set statusline+=%#warningmsg#
@@ -77,6 +81,10 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+"" Split panes to the right and bottom
+set splitbelow
+set splitright
+
 "" I guess I can use the mouse sometimes
 set mouse=n
 set ttymouse=xterm2
@@ -89,6 +97,7 @@ map _ ddkP
 "" set leader key to space
 let mapleader = " "
 
+"" leader mappings
 nnoremap <leader>noh :noh<CR>
 nnoremap <leader>rn :set rnu!<CR>
 nnoremap <leader>sp :set spell!<CR>
@@ -97,3 +106,5 @@ nnoremap <leader>fzf :FZF<CR>
 nnoremap <leader>ff :Rg<CR>
 nnoremap <leader>gs :G<CR>
 nnoremap <leader>w :w<CR>
+nnoremap <leader>co G:read .co_auth<CR>gg
+nnoremap <leader>ser :-1read ~/.vim/templates/rails/service_template.rb<CR>ggfSi
