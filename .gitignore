@@ -1,2 +1,7 @@
 .netrwhist
-undodir
+# ignore everything in undodir
+undodir/*
+
+
+# Except keep so that undodir can be committed
+!undodir/.keep
