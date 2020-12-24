@@ -70,6 +70,26 @@ let g:syntastic_check_on_wq = 0
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 
+"" fzf window colors match colorscheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+"" Show file preview when :Files is called
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': '--info=inline'}), <bang>0)
+
 "" searching
 set hlsearch
 set incsearch
@@ -102,7 +122,7 @@ nnoremap <leader>noh :noh<CR>
 nnoremap <leader>rn :set rnu!<CR>
 nnoremap <leader>sp :set spell!<CR>
 
-nnoremap <leader>fzf :FZF<CR>
+nnoremap <leader>fzf :Files<CR>
 nnoremap <leader>ff :Rg<CR>
 nnoremap <leader>gs :G<CR>
 nnoremap <leader>w :w<CR>
