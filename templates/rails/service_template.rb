@@ -1,6 +1,6 @@
 class Service
+  class << self
 
-  module Connectable
     private
 
     def get_json(uri)
@@ -14,6 +14,4 @@ class Service
       end
     end
   end
-
-  extend Connectable
 end

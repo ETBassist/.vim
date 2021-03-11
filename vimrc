@@ -12,12 +12,16 @@ autocmd VimEnter * echo ">^.^<"
 "" Don't try to be compatible with Vi
 set nocompatible
 
+"" Override Italics
+set t_ZH=[3m
+set t_ZR=[23m
 set noerrorbells
 set vb t_vb=
 set ruler
 "" Shows cursor line, sets it to highlight line in near black and bold text
 set cursorline
 hi CursorLine cterm=BOLD ctermbg=16 ctermfg=NONE
+hi Comment cterm=italic
 "" Shows numbers and numbers relative to cursor
 set number
 set rnu
@@ -29,6 +33,9 @@ set smartindent
 "" Shows light line and hides original mode indicator
 set laststatus=2
 set noshowmode
+
+"" backspace through anything
+set backspace=indent,eol,start
 
 "" Persistent undo
 set undofile
@@ -62,7 +69,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+"" let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
@@ -101,8 +108,7 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-"" Split panes to the right and bottom
-set splitbelow
+"" Split panes to the right
 set splitright
 
 "" I guess I can use the mouse sometimes
@@ -128,3 +134,4 @@ nnoremap <leader>gs :G<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>co G:read .co_auth<CR>gg
 nnoremap <leader>ser :-1read ~/.vim/templates/rails/service_template.rb<CR>ggfSi
+nnoremap <leader>yf :let @+ = expand("%")<CR>
