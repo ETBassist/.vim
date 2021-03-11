@@ -31,3 +31,9 @@
 [submodule "bundle/vim-indent-object"]
 	path = bundle/vim-indent-object
 	url = https://github.com/michaeljsmith/vim-indent-object.git
+[submodule "bundle/vim-mkdir"]
+	path = bundle/vim-mkdir
+	url = https://github.com/pbrisbin/vim-mkdir.git
+[submodule "bundle/vim-polyglot"]
+	path = bundle/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git
