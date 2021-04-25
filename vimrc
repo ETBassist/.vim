@@ -12,6 +12,7 @@ autocmd VimEnter * echo ">^.^<"
 "" Don't try to be compatible with Vi
 set nocompatible
 
+set updatetime=300
 "" Override Italics
 set t_ZH=[3m
 set t_ZR=[23m
@@ -159,3 +160,4 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>co G:read .co_auth<CR>gg
 nnoremap <leader>ser :-1read ~/.vim/templates/rails/service_template.rb<CR>ggfSi
 nnoremap <leader>yf :let @+ = expand("%")<CR>
+nnoremap <leader><leader>e :CocCommand explorer<CR>
