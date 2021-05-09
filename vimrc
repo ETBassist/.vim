@@ -74,6 +74,15 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
 "" CoC configuration
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -161,3 +170,4 @@ nnoremap <leader>co G:read .co_auth<CR>gg
 nnoremap <leader>ser :-1read ~/.vim/templates/rails/service_template.rb<CR>ggfSi
 nnoremap <leader>yf :let @+ = expand("%")<CR>
 nnoremap <leader>e :CocCommand explorer<CR>
+nnoremap <leader>, f,a<CR><ESC>
